@@ -10,7 +10,8 @@ module.exports = function( grunt ) {
 			acorn = require( 'acorn' ),
 			walk = require( 'acorn/dist/walk' ),
 			escodegen = require( 'escodegen' ),
-			excludeFn = this.options().exclude || function(){ return false; };
+			excludeFn = this.options().exclude || function(){ return false; },
+			partialToModule = this.options().partialToModule || function(item){ return item };
 
 		var processHbsJs = function( filePath ){
 
@@ -33,7 +34,7 @@ module.exports = function( grunt ) {
 				grunt.log.writeln( filePath, "=>", JSON.stringify( partials ) );
 
 				var pm = partials.map(function(item){
-					return { type : "Literal", value : 'tmpl/' + item };
+					return { type : "Literal", value : partialToModule(item) };
 				});
 
 				var codeToInsert = "var _partials = " + JSON.stringify(partials) + ";"
