@@ -1,5 +1,7 @@
 # grunt-hbs-require-partials
-transforms compiled hbs templates to require necessary partials
+transforms compiled hbs templates to require necessary partials.
+
+note: this code is extremely dependent upon the structure of compiled hbs javascript. This has been texted with hbs v2 but might not work with other versions.
 
 uses standard grunt src-dest file mapping - http://gruntjs.com/configuring-tasks#files
 
