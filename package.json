@@ -1,0 +1,16 @@
+{
+  "name": "grunt-hbs-require-partials",
+  "description": "compiled hbs templates should load their own partials",
+  "version": "0.0.1",
+  "author": {
+    "name": "Matt Kime"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "dependencies": {
+    "acorn": "^1.2.2",
+    "escodegen": "^1.6.1"
+  },
+  "devDependencies": {}
+}
